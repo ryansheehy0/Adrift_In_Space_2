@@ -1,10 +1,10 @@
+import Event from "./Event"
 
-function App() {
+function App(){
 
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
+    <div className="bg-space w-screen h-screen bg-cover bg-center">
+    </div>
   )
 }
 
