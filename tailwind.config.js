@@ -8,6 +8,10 @@ export default {
     extend: {
       backgroundImage: {
         'space': "url('/space_background.png')"
+      },
+      colors: {
+        "custom-blue": "#1F384E",
+        "dark-custom-blue": "#0E293E"
       }
     },
   },
