@@ -25,9 +25,9 @@ type ProviderProps = {
 const Provider: React.FC<ProviderProps> = ({children}) => {
   const [gameInfo, setGameInfo] = useState({
     crew: 4,
-    fuel: 11,
-    food: 14,
-    lightYears: 14,
+    fuel: 12,
+    food: 15,
+    lightYears: 15,
     currentEvent: "intro"
   })
   const [gameInfoChanges, setGameInfoChanges] = useState<GameInfoChanges>({
@@ -35,7 +35,7 @@ const Provider: React.FC<ProviderProps> = ({children}) => {
     fuelChanges: [],
     foodChanges: [],
     lightYearChanges: [],
-    nextEvent: "asteroid"
+    nextEvent: ""
   })
 
   return (
