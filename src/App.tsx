@@ -1,7 +1,7 @@
 import Provider from "./utils/context"
 import TopBar from "./components/TopBar"
 import BottomBar from "./components/BottomBar"
-import intro from "./events"
+import intro from "./events/events"
 import Event from "./components/Event"
 
 function App(){

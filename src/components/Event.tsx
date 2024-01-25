@@ -1,35 +1,18 @@
 import React from 'react'
 import { useState } from 'react'
-import { GameInfoChanges } from '../utils/types'
-import { Dispatch, SetStateAction } from 'react'
 import { useGlobalContext } from '../utils/context'
+import { EventType } from '../utils/types'
 
-type EventType = {
-  name: string
-  title: string
-  paragraph: string
-  option1: string
-  option2: string
-  image: string
-  imageProperties: string
-  afterOption1Text: string
-  afterOption2Text: string
-  option1Function: (setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>) => void
-  option2Function: (setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>) => void
-}
-
-const Event: React.FC<EventType> = ({title, paragraph, option1, option2, image, imageProperties, afterOption1Text, afterOption2Text, option1Function, option2Function}) => {
-  const [afterEvent, setAfterEvent] = useState<false | "option 1" | "option 2">(false)
+const Event: React.FC<EventType> = ({title, paragraph, option1, option2, image, imageProperties, option1Function, option2Function}) => {
+  const [afterEventText, setAfterEventText] = useState<false | string>(false)
   const {gameInfo, setGameInfo, gameInfoChanges, setGameInfoChanges} = useGlobalContext()
 
   function optionClicked(option: "option 1" | "option 2"){
-    if(!afterEvent){
+    if(!afterEventText){
       if(option === "option 1"){
-        setAfterEvent("option 1")
-        option1Function(setGameInfoChanges)
+        setAfterEventText(option1Function(setGameInfoChanges, gameInfo))
       }else{
-        setAfterEvent("option 2")
-        option2Function(setGameInfoChanges)
+        setAfterEventText(option2Function(setGameInfoChanges, gameInfo))
       }
       return
     }
@@ -56,10 +39,10 @@ const Event: React.FC<EventType> = ({title, paragraph, option1, option2, image, 
     }
 
     // Check if lost or won game
-    if(newLightYears === 0){
+    if(newLightYears <= 0){
       console.log("You won")
     }else{
-      if(newCrew === 0 || newFuel === 0){
+      if(newCrew <= 0 || newFuel <= 0){
         console.log("You lose")
       }
     }
@@ -70,7 +53,6 @@ const Event: React.FC<EventType> = ({title, paragraph, option1, option2, image, 
       fuelChanges: [] as number[],
       foodChanges: [] as number[],
       lightYearChanges: [] as number[],
-      nextEvent: ""
     })
 
     // Apply changes and go to next event
@@ -81,7 +63,7 @@ const Event: React.FC<EventType> = ({title, paragraph, option1, option2, image, 
         fuel: newFuel,
         food: newFood,
         lightYears: newLightYears,
-        currentEvent: gameInfoChanges.nextEvent
+        currentEventIndex: (typeof gameInfo.currentEventIndex === "number" ? gameInfo.currentEventIndex + 1 : 0)
       }
     })
   }
@@ -92,14 +74,14 @@ const Event: React.FC<EventType> = ({title, paragraph, option1, option2, image, 
         {/* Text event */}
         <div className="w-[300px] sm:w-[600px] h-fit bg-custom-blue outline outline-offset-[-4px] rounded-lg p-4">
           <h2 className="text-3xl">{title}</h2>
-          <p className="text-xl" dangerouslySetInnerHTML={{__html: afterEvent ? (afterEvent === "option 1" ? afterOption1Text : afterOption2Text) : paragraph}} />
+          <p className="text-xl" dangerouslySetInnerHTML={{__html: afterEventText ?? paragraph}} />
         </div>
         {/* Options */}
         <button onClick={() => optionClicked("option 1")} className="w-fit h-fit relative left-1/2 -translate-x-1/2 bg-custom-blue rounded-lg outline outline-offset-[-4px] p-4 text-xl hover:bg-dark-custom-blue block mt-4 border-none">
-          {afterEvent ? "continue" : option1}
+          {afterEventText ? "continue" : option1}
         </button>
         <button onClick={() => optionClicked("option 2")} className="w-fit h-fit relative left-1/2 -translate-x-1/2 bg-custom-blue rounded-lg outline outline-offset-[-4px] p-4 text-xl hover:bg-dark-custom-blue block mt-4 border-none">
-          {afterEvent ? "continue" : option2}
+          {afterEventText ? "continue" : option2}
         </button>
       </div>
 
