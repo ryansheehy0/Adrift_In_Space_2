@@ -4,12 +4,11 @@ import { EventType } from "../utils/types"
 
 const imperiumScout: EventType = {
   title: "Imperium Scout",
-  paragraph: "On your travels you come across a ship. Your scanners show it has the word Imperium Scout on its side.",
+  paragraph: 'On your travels you come across a ship. Your scanners show it has the word "Imperium Scout" on its side.',
   option1: "Engage your stealth cloaking.",
   option2: "Initiate evasive action and prepare for battle.",
   image: "/events/imperium_scout.png",
-  imageProperties: "absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52",
-
+  imageProperties: "absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52 -rotate-90",
   option1Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){
     let gameInfoChanges
     if(gameInfo.food === 0){

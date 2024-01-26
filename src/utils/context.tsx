@@ -23,7 +23,11 @@ type ProviderProps = {
 }
 
 const Provider: React.FC<ProviderProps> = ({children}) => {
-  const [gameInfo, setGameInfo] = useState<GameInfo>({
+  const [gameInfo, setGameInfo] = useState<GameInfo>(
+    localStorage.getItem("gameInfo") ?
+    JSON.parse(localStorage.getItem("gameInfo") as string) as GameInfo
+    :
+    {
     crew: 4,
     fuel: 12,
     food: 15,

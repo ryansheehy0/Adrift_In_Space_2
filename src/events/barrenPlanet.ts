@@ -13,7 +13,7 @@ const barrenPlanet: EventType = {
     let gameInfoChanges
     if(gameInfo.food === 0){
       gameInfoChanges = {
-        crewChanges: [-1, -1],
+        crewChanges: [-2],
         fuelChanges: [2, -1],
         foodChanges: [] as number[],
         lightYearChanges: [-1]
@@ -27,7 +27,7 @@ const barrenPlanet: EventType = {
       }
 		}else{
       gameInfoChanges = {
-        crewChanges: [-1],
+        crewChanges: [],
         fuelChanges: [2, -1],
         foodChanges: [-1, -1],
         lightYearChanges: [-1]
@@ -37,11 +37,11 @@ const barrenPlanet: EventType = {
     setGameInfoChanges({...gameInfoChanges})
 
     if(gameInfo.food === 0){
-      return "You scan the planet and find 2 Fuel, but it took longer then you expected. Since you don't have any food, 2 of your crew members died from starvation."
+      return "You scan the planet and find 2 fuel, but it took longer then you expected. Since you don't have any food, 2 of your crew members died from starvation."
     }else if(gameInfo.food === 1){
-      return "You scan the planet and find 2 Fuel, but it took longer then you expected. Since you only have 1 food, 1 of your crew died from starvation."
+      return "You scan the planet and find 2 fuel, but it took longer then you expected. Since you only have 1 food, 1 of your crew died from starvation."
     }else{
-      return "You scan the planet and find 2 Fuel, but it took longer then you expected. Your crew ate 1 more food."
+      return "You scan the planet and find 2 fuel, but it took longer then you expected. Your crew ate 1 more food."
     }
   },
   option2Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){

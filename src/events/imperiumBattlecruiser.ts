@@ -7,8 +7,8 @@ const imperiumBattlecruiser: EventType = {
   paragraph: `You see an Imperium Battlecruiser. The scout you just saw must have been scouting ahead for this ship. This ship has too powerful sensors for you to try and cloak from. You are receiving a message: "Surrender now to the Imperium. We are confiscating your ship and bringing you in for questioning."`,
   option1: "Flee.",
   option2: "Stand and fight.",
-  image: "/public/events/imperium_battlecruiser.png",
-  imageProperties: "absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52",
+  image: "/events/imperium_battlecruiser.png",
+  imageProperties: "absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52 -rotate-90",
   option1Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){
     let gameInfoChanges
     if(gameInfo.food === 0){
@@ -29,7 +29,7 @@ const imperiumBattlecruiser: EventType = {
 
     setGameInfoChanges({...gameInfoChanges})
 
-		return "Recognizing the overwhelming firepower of the Imperium Battlecruiser you decide to run away. Luckily you are faster and quicker than the Battlecruiser, however you have to travel away from your home planet to do so."
+		return "Recognizing the overwhelming firepower of the Imperium Battlecruiser, you decide to run away. Luckily, you are faster and quicker than the Battlecruiser; however, you have to travel away from your home planet to do so."
   },
   option2Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){
     let gameInfoChanges

@@ -3,7 +3,7 @@ import { useGlobalContext } from "../utils/context"
 import { twMerge } from "tailwind-merge"
 
 const TopBar: React.FC = () => {
-  const {gameInfo, setGameInfo, gameInfoChanges} = useGlobalContext()
+  const {gameInfo, setGameInfo, gameInfoChanges, setGameInfoChanges} = useGlobalContext()
 
   function newGame(){
     setGameInfo({
@@ -13,6 +13,13 @@ const TopBar: React.FC = () => {
       lightYears: 15,
       currentEventIndex: 0
     })
+    setGameInfoChanges({
+      crewChanges: [] as number[],
+      fuelChanges: [] as number[],
+      foodChanges: [] as number[],
+      lightYearChanges: [] as number[]
+    })
+    location.reload()
   }
 
   return (

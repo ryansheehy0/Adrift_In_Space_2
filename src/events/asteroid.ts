@@ -29,7 +29,7 @@ const asteroid: EventType = {
 
     setGameInfoChanges({...gameInfoChanges})
 
-    return "You move left of the asteroid and get hit losing 1 crew member."
+    return "You move left of the asteroid and get hit. You lose 1 crew member."
   },
   option2Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){
     let gameInfoChanges

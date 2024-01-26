@@ -38,15 +38,6 @@ const Event: React.FC<EventType> = ({title, paragraph, option1, option2, image, 
       newLightYears += lightYearChange
     }
 
-    // Check if lost or won game
-    if(newLightYears <= 0){
-      console.log("You won")
-    }else{
-      if(newCrew <= 0 || newFuel <= 0){
-        console.log("You lose")
-      }
-    }
-
     // Reset old game info changes
     setGameInfoChanges({
       crewChanges: [] as number[],
@@ -67,6 +58,25 @@ const Event: React.FC<EventType> = ({title, paragraph, option1, option2, image, 
         currentEventIndex: (typeof gameInfo.currentEventIndex === "number" ? gameInfo.currentEventIndex + 1 : 0)
       }
     })
+
+    // Check if lost or won game
+    if(newLightYears <= 0){
+      setGameInfo((gameInfo) => {
+        return {
+          ...gameInfo,
+          currentEventIndex: "you win"
+        }
+      })
+    }else{
+      if(newCrew <= 0 || newFuel <= 0){
+        setGameInfo((gameInfo) => {
+          return {
+            ...gameInfo,
+            currentEventIndex: "you lose"
+          }
+        })
+      }
+    }
   }
 
   return (

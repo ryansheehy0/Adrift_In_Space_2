@@ -9,7 +9,7 @@ const lavaPlanet: EventType = {
   option2: "Bypass the planet and err on the side of caution.",
   image: "/events/lava_planet.png",
   imageProperties: "absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52",
-  option1Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, _gameInfo: GameInfo){
+  option1Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){
     const gameInfoChanges = {
 			crewChanges: [-1],
 			fuelChanges: [-1],

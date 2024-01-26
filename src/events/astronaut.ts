@@ -8,7 +8,7 @@ const astronaut: EventType = {
   option1: "Investigate the situation.",
   option2: "Risk a citation in the future, you have to get home.",
   image: "/events/astronaut.png",
-  imageProperties: "absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52",
+  imageProperties: "absolute bottom-24 sm:bottom-64 right-2 sm:right-24 w-10 sm:w-12",
   option1Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){
     let gameInfoChanges
     if(gameInfo.food === 0){
