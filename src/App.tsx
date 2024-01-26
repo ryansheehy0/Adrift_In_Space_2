@@ -6,10 +6,22 @@ import { useGlobalContext } from "./utils/context"
 import { useState, useEffect } from "react"
 import EndGame from "./components/EndGame"
 import { EventType } from "./utils/types"
+import { Howl } from 'howler'
 
 function App(){
   const {gameInfo} = useGlobalContext()
   const [currentEvent, setCurrentEvent] = useState<"you win" | "you lose" | EventType>(events[0])
+
+  // Set up sound
+  useEffect(() => {
+    const sound = new Howl({
+      src: ["/disasterpeace_background_music.mp3"],
+      autoplay: true,
+      loop: true,
+      volume: 0.3
+    })
+    sound.play()
+  }, [])
 
   useEffect(() => {
     if(gameInfo.currentEventIndex === "you win"){
