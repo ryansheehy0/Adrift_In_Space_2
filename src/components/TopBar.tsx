@@ -11,7 +11,7 @@ const TopBar: React.FC = () => {
       fuel: 12,
       food: 15,
       lightYears: 15,
-      currentEvent: "intro"
+      currentEventIndex: 0
     })
   }
 

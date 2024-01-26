@@ -4,7 +4,7 @@ import { EventType } from "../utils/types"
 
 const intro: EventType = {
   title: "Home Planet",
-  paragraph: "&emsp;You are an AI captain of an adrift space ship trying to keep your crew alive and get back to your home planet.</br>&emsp;For each event you are given 2 options. Each option will result in outcomes which can be good, bad, or neutral.",
+  paragraph: "&emsp;You're an AI captain of an adrift space ship trying to keep your crew alive and get back to your home planet.</br>&emsp;For each event you are given 2 options. Each option will result in outcomes which can be good, bad, or neutral.",
   option1: "Option 1",
   option2: "Option 2",
   image: "/home_planet.gif",

@@ -54,6 +54,7 @@ const Event: React.FC<EventType> = ({title, paragraph, option1, option2, image, 
       foodChanges: [] as number[],
       lightYearChanges: [] as number[],
     })
+    setAfterEventText(false)
 
     // Apply changes and go to next event
     setGameInfo((gameInfo) => {
@@ -73,14 +74,14 @@ const Event: React.FC<EventType> = ({title, paragraph, option1, option2, image, 
       <div className="absolute top-20 sm:top-24 left-1/2 -translate-x-1/2 ">
         {/* Text event */}
         <div className="w-[300px] sm:w-[600px] h-fit bg-custom-blue outline outline-offset-[-4px] rounded-lg p-4">
-          <h2 className="text-3xl">{title}</h2>
-          <p className="text-xl" dangerouslySetInnerHTML={{__html: afterEventText ?? paragraph}} />
+          <h2 className="text-lg sm:text-3xl">{title}</h2>
+          <p className="text-base sm:text-xl" dangerouslySetInnerHTML={{__html: afterEventText ? afterEventText : paragraph}} />
         </div>
         {/* Options */}
-        <button onClick={() => optionClicked("option 1")} className="w-fit h-fit relative left-1/2 -translate-x-1/2 bg-custom-blue rounded-lg outline outline-offset-[-4px] p-4 text-xl hover:bg-dark-custom-blue block mt-4 border-none">
+        <button onClick={() => optionClicked("option 1")} className="w-fit h-fit relative left-1/2 -translate-x-1/2 bg-custom-blue rounded-lg outline outline-offset-[-4px] p-4 text-base sm:text-xl hover:bg-dark-custom-blue block mt-4 border-none">
           {afterEventText ? "continue" : option1}
         </button>
-        <button onClick={() => optionClicked("option 2")} className="w-fit h-fit relative left-1/2 -translate-x-1/2 bg-custom-blue rounded-lg outline outline-offset-[-4px] p-4 text-xl hover:bg-dark-custom-blue block mt-4 border-none">
+        <button onClick={() => optionClicked("option 2")} className="w-fit h-fit relative left-1/2 -translate-x-1/2 bg-custom-blue rounded-lg outline outline-offset-[-4px] p-4 text-base sm:text-xl hover:bg-dark-custom-blue block mt-4 border-none">
           {afterEventText ? "continue" : option2}
         </button>
       </div>
