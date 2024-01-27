@@ -16,14 +16,14 @@ const imperiumBattlecruiser: EventType = {
         crewChanges: [-1],
         fuelChanges: [-1],
         foodChanges: [] as number[],
-        lightYearChanges: [] as number[]
+        lightYearChanges: [1]
       }
     }else{
       gameInfoChanges = {
         crewChanges: [] as number[],
         fuelChanges: [-1],
         foodChanges: [-1],
-        lightYearChanges: [] as number[]
+        lightYearChanges: [1]
       }
     }
 

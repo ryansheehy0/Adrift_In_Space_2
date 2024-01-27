@@ -25,13 +25,13 @@ const TopBar: React.FC = () => {
   return (
     <div className="w-screen h-12 bg-custom-blue flex justify-between items-center outline outline-offset-[-4px] rounded-b-lg text-xl sm:text-4xl">
       <button onClick={newGame} className="m-0 ml-2 sm:ml-12 p-0 px-2 hover:border-transparent bg-transparent text-nowrap">New Game</button>
-      <p className="mr-2 sm:mr-12 text-nowrap px-2">{gameInfo.lightYears} light years from home
+      <div className="mr-2 sm:mr-12 text-nowrap px-2">{gameInfo.lightYears} light years from home
         <div className="absolute bg-transparent w-fit h-fit top-12">
           {gameInfoChanges.lightYearChanges.map((lightYearChange) => (
             <p className={twMerge("text-nowrap", lightYearChange > 0 ? "text-green-500" : "text-red-500")}>{lightYearChange > 0 ? "+" + lightYearChange: lightYearChange}</p>
           ))}
         </div>
-      </p>
+      </div>
     </div>
   )
 }

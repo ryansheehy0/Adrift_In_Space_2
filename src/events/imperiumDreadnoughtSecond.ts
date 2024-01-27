@@ -8,7 +8,7 @@ const imperiumDreadnoughtSecond: EventType = {
   option1: "It's too risky to take any chances. Destroy the Dreadnought with your crew still in it.",
   option2: "Shoot to disable the engines of the Dreadnought. And give time for your crew to escape.",
   image: "/events/imperium_dreadnought.png",
-  imageProperties: "absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52",
+  imageProperties: "absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52 -rotate-90",
   option1Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){
     const gameInfoChanges = {
 			crewChanges: [-gameInfo.crew],
@@ -42,7 +42,7 @@ const imperiumDreadnoughtSecond: EventType = {
 
     setGameInfoChanges({...gameInfoChanges})
 
-		return `Your crew make it out alive on an escape pod, but the weapons on the Dreadnought fire and kill the crew member who was from the White Galaxy. Right before he died he sent this transmission: "I was sent to be with you to gain as much knowledge as I could and I have fulfilled my mission. My body might die, but my soul will make it back to the White Galaxy carrying the knowledge of our journey together. Farewell my friend."`
+		return `Your crew make it out alive on an escape pod, but the weapons on the Dreadnought fire and kill the crew member who was from the White Galaxy. Right before he died, he sent this transmission: "I was sent to be with you to gain as much knowledge as I could, and I have fulfilled my mission. My body might die, but my soul will make it back to the White Galaxy carrying the knowledge of our journey together. Farewell, my friend."`
   }
 }
 

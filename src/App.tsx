@@ -18,7 +18,7 @@ function App(){
       src: ["/disasterpeace_background_music.mp3"],
       autoplay: true,
       loop: true,
-      volume: 0.3
+      volume: 0.02
     })
     sound.play()
   }, [])

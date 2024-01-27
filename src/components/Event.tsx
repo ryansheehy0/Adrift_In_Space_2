@@ -61,27 +61,21 @@ const Event: React.FC<EventType> = ({title, paragraph, option1, option2, image, 
 
     // Check if lost or won game
     if(newLightYears <= 0){
-      setGameInfo((gameInfo) => {
-        return {
-          ...gameInfo,
-          currentEventIndex: "you win"
-        }
-      })
+      if(newCrew <= 0){
+        setGameInfo((gameInfo) => {return {...gameInfo, currentEventIndex: "you lose"}})
+      }else{
+        setGameInfo((gameInfo) => {return {...gameInfo, currentEventIndex: "you win"}})
+      }
     }else{
       if(newCrew <= 0 || newFuel <= 0){
-        setGameInfo((gameInfo) => {
-          return {
-            ...gameInfo,
-            currentEventIndex: "you lose"
-          }
-        })
+        setGameInfo((gameInfo) => {return {...gameInfo, currentEventIndex: "you lose"}})
       }
     }
   }
 
   return (
     <>
-      <div className="absolute top-20 sm:top-24 left-1/2 -translate-x-1/2 ">
+      <div className="absolute top-20 sm:top-24 left-1/2 -translate-x-1/2 z-10">
         {/* Text event */}
         <div className="w-[300px] sm:w-[600px] h-fit bg-custom-blue outline outline-offset-[-4px] rounded-lg p-4">
           <h2 className="text-lg sm:text-3xl">{title}</h2>

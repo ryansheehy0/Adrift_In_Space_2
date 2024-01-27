@@ -1,4 +1,5 @@
 import React from 'react'
+import { twMerge } from 'tailwind-merge'
 import { useGlobalContext } from '../utils/context'
 
 type EndGameProps = {
@@ -47,7 +48,7 @@ const EndGame: React.FC<EndGameProps> = ({endGame}) => {
         </button>
       </div>
 
-      <img src="/home_planet.gif" className="absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52"/>
+      <img src="/home_planet.gif" className={twMerge("absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52", endGame === 'you lose' ? "hidden" : "")}/>
     </>
   )
 }
