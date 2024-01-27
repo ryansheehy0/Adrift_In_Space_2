@@ -9,7 +9,7 @@ const imperiumDreadnought: EventType = {
   option2: "Engage in battle.",
   image: "/events/imperium_dreadnought.png",
   imageProperties: "absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52 -rotate-90",
-  option1Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){
+  option1Function: function(_setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, _gameInfo: GameInfo){
 		return "Trusting the advice of your crew member, you send the rest of your crew into the Dreadnought. Hopefully they will find a way to blow up the Dreadnought or shut it down from the inside."
   },
   option2Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){
