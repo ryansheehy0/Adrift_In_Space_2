@@ -8,7 +8,7 @@ const imperiumScout: EventType = {
   option1: "Engage your stealth cloaking.",
   option2: "Initiate evasive action and prepare for battle.",
   image: "/events/imperium_scout.png",
-  imageProperties: "absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52 -rotate-90",
+  imageProperties: "absolute bottom-24 sm:bottom-60 right-2 sm:right-24 w-10 sm:w-16 -rotate-90",
   option1Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){
     let gameInfoChanges
     if(gameInfo.food === 0){

@@ -8,7 +8,7 @@ const futuristicShip: EventType = {
   option1: "Trade food for crew.",
   option2: "Trade food for fuel.",
   image: "/events/futuristic_ship.png",
-  imageProperties: "absolute bottom-20 sm:bottom-52 right-2 sm:right-24 w-32 sm:w-52 -rotate-90",
+  imageProperties: "absolute bottom-20 sm:bottom-60 right-2 sm:right-24 w-20 sm:w-32 -rotate-90",
   option1Function: function(setGameInfoChanges: Dispatch<SetStateAction<GameInfoChanges>>, gameInfo: GameInfo){
     let gameInfoChanges
     if(gameInfo.food === 0){
