@@ -38,7 +38,7 @@ function App(){
   }, [gameInfo])
 
   return (
-    <div className="bg-space w-screen h-screen bg-cover bg-center">
+    <div className="bg-space w-screen h-screen bg-cover bg-center text-white">
       <TopBar />
       {(currentEvent === "you lose" || currentEvent === "you win") ?
         <EndGame endGame={currentEvent} />
