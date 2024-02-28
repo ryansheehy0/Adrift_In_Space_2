@@ -4,7 +4,10 @@ You're an AI captain of an adrift spaceship, trying to survive and get back to y
 
 ![Screenshot](./screenshot.png)
 
-## Credit:
+## License
+Adrift In Space is licensed under GPLv3. See the COPYING file for details.
+
+## Credit
 - [Background](https://deep-fold.itch.io/space-background-generator)
 - [Font](https://fonts.google.com/specimen/VT323)
 - Events
