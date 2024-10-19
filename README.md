@@ -1,4 +1,4 @@
-# Adrift In Space 2
+# Adrift In Space Video Game
 
 You're an AI captain of an adrift spaceship, trying to survive and get back to your home planet.
 
